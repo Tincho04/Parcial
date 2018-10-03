@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1538523606 source:d:\parcial silva martin 1f\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+	"juegos.h"
+	"juegosYClientes.h"
+
+1538518567 d:\parcial silva martin 1f\parcial\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1538523452 d:\parcial silva martin 1f\parcial\juegos.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1538523508 d:\parcial silva martin 1f\parcial\juegosyclientes.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1538528623 source:d:\silva_martin_1f\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+	"juegos.h"
+	"juegosYClientes.h"
+
+1538527620 d:\silva_martin_1f\parcial\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"juegos.h"
+	"juegosyClientes.h"
+
+1538525063 d:\silva_martin_1f\parcial\juegos.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+
+1538527513 d:\silva_martin_1f\parcial\juegosyclientes.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+
+1538527449 source:d:\silva_martin_1f\parcial\juegosyclientes.c
+	"juegosYClientes.h"
+	"validaciones.h"
+
+1538527815 source:d:\silva_martin_1f\parcial\validaciones.c
+	"validaciones.h"
+
+1538528402 source:d:\silva_martin_1f\parcial\juegos.c
+	"juegos.h"
+
