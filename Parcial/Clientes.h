@@ -5,7 +5,7 @@
 #include <string.h>
 #include <conio.h>
 #include <ctype.h>
-#define VACIO -1
+#define VACIO 1
 #define OCUP   0
 
 typedef struct
@@ -34,14 +34,7 @@ void inicializarClientes(eCliente x[], int tam);
  *
  */
 int buscarLibreCl(eCliente x[], int tam);
-/** \brief permite la carga de datos en base al espacio libre localizado
- *
- * \param x[] eCliente
- * \param tam int
- * \return int
- *
- */
-int cargarI(eCliente x[],int tam);
+
 /** \brief busqueda de disponibilidad de perfil de un cliente
  *
  * \param x[] eCliente
@@ -58,13 +51,7 @@ int buscarClientexidCliente(eCliente x[], int tam, int id);
  * \return int
  *
  */
-void cargarLibre (eCliente listado[],int tam);
-/** \brief realiza la muestra de datos de un cliente
- *
- * \param clt eCliente
- * \return void
- *
- */
+
 void mostrarCliente(eCliente clt);
 /** \brief itera un loop que permite la muestra de datos de todos los clientes cargados
  *
@@ -75,11 +62,18 @@ void mostrarCliente(eCliente clt);
  */
 void mostrarClientes(eCliente nomina[], int tam);
 /** \brief alta de un cliente
- *
+ * \param Clientes[] eCliente
+ * \param tam int
  * \return eCliente
  *
  */
-eCliente agregarCliente();
+int agregarCliente(eCliente Clientes[], int tam);
+/** \brief Generador automatico de ID
+ *
+ * \return int
+ *
+ */
+int  IDC();
 /** \brief baja logica de un cliente
  *
  * \param Clientes[] eCliente

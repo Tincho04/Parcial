@@ -4,12 +4,12 @@
 	<ActiveTarget name="Debug" />
 	<File name="Clientes.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="837" topLine="78" />
+			<Cursor1 position="1752" topLine="36" />
 		</Cursor>
 	</File>
 	<File name="Clientes.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="340" topLine="18" />
+			<Cursor1 position="182" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="alquiler.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -19,27 +19,27 @@
 	</File>
 	<File name="juegos.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="832" topLine="38" />
+			<Cursor1 position="1059" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="juegos.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2136" topLine="66" />
+			<Cursor1 position="737" topLine="12" />
 		</Cursor>
 	</File>
 	<File name="alquiler.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="731" topLine="35" />
+			<Cursor1 position="245" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="validaciones.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="810" topLine="3" />
+			<Cursor1 position="810" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="666" topLine="14" />
+			<Cursor1 position="498" topLine="6" />
 		</Cursor>
 	</File>
 	<File name="validaciones.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">

@@ -8,19 +8,17 @@ void inicializarJuegos(eJuegos x[], int tam)
     for(i=0; i < tam; i++)
     {
         x[i].isEmpty = VACIO;
-        x[i].idJuego= VACIO;
     }
 }
 
 
-int buscarLibre( eJuegos x[], int tam)
+int buscarLibreJ( eJuegos x[], int tam)
 {
     int indice = -1;
     int i;
 
     for(i=0; i< tam; i++)
     {
-
         if( x[i].isEmpty == VACIO)
         {
             indice = i;
@@ -66,8 +64,7 @@ void agregarJuego(eJuegos Juegos[], int tam)
     system("cls");
     printf("  *** Alta Juego ***\n\n");
 
-    indice = buscarLibre(Juegos, tam);
-
+    indice = buscarLibreJ(Juegos, tam);
 
     if(indice == -1)
     {
@@ -121,7 +118,9 @@ void agregarJuego(eJuegos Juegos[], int tam)
 
 void mostrarJuego(eJuegos jgs)
 {
+    if(jgs.isEmpty==OCUP){
     printf("%4d %10s %4f \n\n", jgs.idJuego, jgs.descripcion, jgs.importe);
+}
 }
 
 
@@ -290,5 +289,4 @@ void ordenarXImporteYDescrip(eJuegos x[],int tam)
     {
         mostrarJuego(x[i]);
     }
-    system("pause");
 }

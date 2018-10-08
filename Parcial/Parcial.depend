@@ -64,11 +64,11 @@
 1538528402 source:d:\silva_martin_1f\parcial\juegos.c
 	"juegos.h"
 
-1538969926 source:c:\users\martin\desktop\parcial\parcial\parcial\juegos.c
+1539001342 source:c:\users\martin\desktop\parcial\parcial\parcial\juegos.c
 	"validaciones.h"
 	"juegos.h"
 
-1538972932 c:\users\martin\desktop\parcial\parcial\parcial\juegos.h
+1539001342 c:\users\martin\desktop\parcial\parcial\parcial\juegos.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -87,18 +87,18 @@
 	"juegos.h"
 	"Clientes.h"
 
-1538972932 c:\users\martin\desktop\parcial\parcial\parcial\clientes.h
+1539000832 c:\users\martin\desktop\parcial\parcial\parcial\clientes.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<conio.h>
 	<ctype.h>
 
-1538973137 source:c:\users\martin\desktop\parcial\parcial\parcial\clientes.c
+1539001234 source:c:\users\martin\desktop\parcial\parcial\parcial\clientes.c
 	"Clientes.h"
 	"validaciones.h"
 
-1538971492 source:c:\users\martin\desktop\parcial\parcial\parcial\main.c
+1539001448 source:c:\users\martin\desktop\parcial\parcial\parcial\main.c
 	<stdio.h>
 	<stdlib.h>
 	"validaciones.h"
@@ -106,7 +106,7 @@
 	"juegos.h"
 	"Clientes.h"
 
-1538973060 c:\users\martin\desktop\parcial\parcial\parcial\alquiler.h
+1539000516 c:\users\martin\desktop\parcial\parcial\parcial\alquiler.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

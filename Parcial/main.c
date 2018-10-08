@@ -18,6 +18,8 @@ int main()
     char cargaJ = 'N';
     int eleccion;
     inicializarClientes(clienteMain, C);
+    inicializarJuegos(juegosMain,J);
+    inicializarAlquiler(alquileresMain,A);
     eleccion=menu();
 
     do
@@ -25,15 +27,21 @@ int main()
         switch(eleccion)
         {
         case 1:
-            cargarLibre(clienteMain, C);
-            system("pause");
-            cargaC='S';
+            if(agregarCliente(clienteMain, C)==0);
+            {
+                printf("carga exitosa\n");
+                system("pause");
+                cargaC='S';
+                eleccion=menu();
+            }
             break;
         case 2:
             if (cargaC=='S')
             {
                 system("cls");
                 modificarCliente(clienteMain, C);
+                system("pause");
+                eleccion=menu();
                 break;
             }
             else
@@ -49,6 +57,8 @@ int main()
             {
                 system("cls");
                 eliminarCliente(clienteMain, C);
+                system("pause");
+                eleccion=menu();
                 break;
             }
             else
@@ -64,6 +74,7 @@ int main()
                 system("cls");
                 ordenarXApellidoYNombre(clienteMain, C);
                 system("pause");
+                eleccion=menu();
                 break;
             }
             else
@@ -77,12 +88,15 @@ int main()
             agregarJuego(juegosMain, J);
             system("pause");
             cargaC='S';
+            eleccion=menu();
             break;
         case 6:
             if (cargaJ=='S')
             {
                 system("cls");
                 modificarJuego(juegosMain, J);
+                system("pause");
+                eleccion=menu();
                 break;
             }
             else
@@ -94,10 +108,12 @@ int main()
             }
 
         case 7:
-             if (cargaJ=='S')
+            if (cargaJ=='S')
             {
                 system("cls");
                 eliminarJuego(juegosMain, J);
+                system("pause");
+                eleccion=menu();
                 break;
             }
             else
@@ -113,6 +129,7 @@ int main()
                 system("cls");
                 ordenarXImporteYDescrip(juegosMain, J);
                 system("pause");
+                eleccion=menu();
                 break;
             }
             else
@@ -123,11 +140,12 @@ int main()
                 break;
             }
         case 9:
-             if (cargaC=='S' && cargaJ=='S')
+            if (cargaC=='S' && cargaJ=='S')
             {
                 system("cls");
                 altaAlquiler(alquileresMain, A, juegosMain, J, clienteMain, C);
                 system("pause");
+                eleccion=menu();
                 break;
             }
             else

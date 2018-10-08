@@ -5,8 +5,8 @@
 #include <string.h>
 #include <conio.h>
 #include <ctype.h>
-#define VACIO -1
-#define OCUP   0
+#define VACIO 1
+#define OCUP  0
 
 typedef struct
 {
@@ -31,7 +31,7 @@ void inicializarJuegos(eJuegos x[], int tam);
  * \return int
  *
  */
-int buscarLibre( eJuegos x[], int tam);
+int buscarLibreJ( eJuegos x[], int tam);
 /** \brief busca un juego en base al id ingresado
  *
  * \param x[] eJuegos
@@ -51,12 +51,10 @@ int buscarJuego(eJuegos x[], int tam, int id);
 void agregarJuego(eJuegos Juegos[], int tam);
 /** \brief generador automatico de id por juego
  *
- * \param x[] eJuegos
- * \param tam int
  * \return int
  *
  */
-int generarID(eJuegos x[],int tam);
+int  IDJ();
 /** \brief muestra uno de los juegos cargados siempre y cuando no este dado de baja
  *
  * \param jgs eJuegos

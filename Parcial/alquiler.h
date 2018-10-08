@@ -8,7 +8,7 @@
 #include "validaciones.h"
 #include "Clientes.h"
 #include "juegos.h"
-#define VACIO -1
+#define VACIO 1
 #define OCUP   0
 typedef struct
 {

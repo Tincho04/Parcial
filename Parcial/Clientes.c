@@ -7,8 +7,7 @@ void inicializarClientes(eCliente x[], int tam)
 
     for(i=0; i < tam; i++)
     {
-        x[i].isEmpty = 0;
-        x[i].idCliente = -1;
+        x[i].isEmpty = VACIO;
     }
 }
 
@@ -21,33 +20,13 @@ int buscarLibreCl( eCliente x[], int tam)
     for(i=0; i< tam; i++)
     {
 
-        if( x[i].isEmpty == 0)
+        if( x[i].isEmpty == VACIO)
         {
             indice = i;
             break;
         }
     }
     return indice;
-}
-
-int cargarI(eCliente x[],int tam)
-{
-    int retorno = 0;
-    int i;
-    if(tam > 0)
-    {
-        for(i=0; i<tam; i++)
-        {
-            if(x[i].isEmpty == 1)
-            {
-                if(x[i].idCliente>retorno)
-                {
-                    retorno=x[i].idCliente;
-                }
-            }
-        }
-    }
-    return retorno+1;
 }
 
 int buscarClientexidCliente(eCliente x[], int tam, int idCliente)
@@ -64,34 +43,6 @@ int buscarClientexidCliente(eCliente x[], int tam, int idCliente)
         }
     }
     return indice;
-}
-
-void cargarLibre (eCliente listado[],int tam)
-{
-    int indice;
-    char continu='S';
-    do
-    {
-        indice = buscarLibreCl(listado,tam);
-        if(indice>=0)
-        {
-            listado[indice]=agregarCliente();
-            listado[indice].idCliente =cargarI(listado,indice);
-        }
-        else
-        {
-            printf("Todos los IDs se encuentran actualmente en uso, no es posible cargar mas datos. ");
-            system("pause");
-            break;
-        }
-
-        printf("Desea ingresar otro? s / n \n");
-        fflush(stdin);
-        continu=getch();
-
-        continu=toupper(continu);
-    }
-    while(continu=='S');
 }
 
 
@@ -117,11 +68,18 @@ int menu()
     return opcion;
 }
 
-
-
-eCliente agregarCliente()
+int  IDC()
 {
+    static int idCliente=0;
+    idCliente++;
+    return idCliente;
+}
+
+int agregarCliente(eCliente Clientes[], int tam)
+{
+    int retorno = -1;
     eCliente nuevoCliente;
+    int indice;
     char nuevoApellido[51];
     char nuevoNombre[51];
     char nuevoDomicilio[51];
@@ -129,43 +87,54 @@ eCliente agregarCliente()
 
     system("cls");
     printf("  *** Alta Cliente ***\n\n");
-
-    printf("Ingrese apellido: ");
-    fflush(stdin);
-    if(getStr(nuevoApellido,51)==0 && validarName(nuevoApellido,51)==1)
+    indice = buscarLibreCl(Clientes, tam);
+    if(indice == -1)
     {
-        fflush(stdin);
-        strcpy(nuevoCliente.apellido,nuevoApellido);
+        printf("No hay lugar\n\n");
     }
-    printf("Ingrese Nombre: ");
-    fflush(stdin);
-    if(getStr(nuevoNombre,51)==0 && validarName(nuevoNombre,51)==1)
+    else
     {
+        printf("Ingrese apellido: ");
         fflush(stdin);
-        strcpy(nuevoCliente.nombre,nuevoNombre);
-    }
-    printf("Ingrese Domicilio: ");
-    fflush(stdin);
-    if(getStr(nuevoDomicilio,51)==0 && validarName(nuevoDomicilio,51)==1)
-    {
+        if(getStr(nuevoApellido,51)==0 && validarName(nuevoApellido,51)==1)
+        {
+            fflush(stdin);
+            strcpy(nuevoCliente.apellido,nuevoApellido);
+        }
+        printf("Ingrese Nombre: ");
         fflush(stdin);
-        strcpy(nuevoCliente.domicilio,nuevoDomicilio);
-    }
-    printf("Ingrese Telefono: ");
-    fflush(stdin);
-    if(getStr(nuevoTelefono,51)==0 && validarName(nuevoTelefono,51)==1)
-    {
+        if(getStr(nuevoNombre,51)==0 && validarName(nuevoNombre,51)==1)
+        {
+            fflush(stdin);
+            strcpy(nuevoCliente.nombre,nuevoNombre);
+        }
+        printf("Ingrese Domicilio: ");
         fflush(stdin);
-        strcpy(nuevoCliente.telefono,nuevoTelefono);
+        if(getStr(nuevoDomicilio,51)==0 && validarName(nuevoDomicilio,51)==1)
+        {
+            fflush(stdin);
+            strcpy(nuevoCliente.domicilio,nuevoDomicilio);
+        }
+        printf("Ingrese Telefono: ");
+        fflush(stdin);
+        if(getStr(nuevoTelefono,51)==0)
+        {
+            fflush(stdin);
+            strcpy(nuevoCliente.telefono,nuevoTelefono);
+        }
+        Clientes[indice].idCliente =IDC();
+        nuevoCliente.isEmpty = OCUP;
+        Clientes[indice] = nuevoCliente;
+        retorno=0;
     }
-    nuevoCliente.isEmpty = 1;
-
-    return nuevoCliente;
+    return retorno;
 }
-
 void mostrarCliente(eCliente clt)
 {
-    printf("%4d %10s %10s %10s  %10s \n\n", clt.idCliente, clt.apellido, clt.nombre, clt.domicilio, clt.telefono);
+    if(clt.isEmpty==OCUP)
+    {
+        printf("%4d %10s %10s %10s  %10s \n\n", clt.idCliente, clt.apellido, clt.nombre, clt.domicilio, clt.telefono);
+    }
 }
 
 
@@ -177,10 +146,7 @@ void mostrarClientes(eCliente nomina[], int tam)
     printf(("idCliente   apellido  Nombre  Domicilio  Telefono\n\n"));
     for(i=0; i< tam; i++)
     {
-        if( nomina[i].isEmpty == 1)
-        {
             mostrarCliente(nomina[i]);
-        }
     }
 }
 
@@ -190,6 +156,9 @@ void eliminarCliente(eCliente Clientes[], int tam)
     int idCliente;
     int indice;
     char borrar;
+
+    printf(("idCliente   apellido  Nombre  Domicilio  Telefono\n\n"));
+    mostrarClientes(Clientes,tam);
 
     printf("Ingrese idCliente: ");
     scanf("%d", &idCliente);
@@ -212,7 +181,7 @@ void eliminarCliente(eCliente Clientes[], int tam)
         }
         else
         {
-            Clientes[indice].isEmpty = 0;
+            Clientes[indice].isEmpty = VACIO;
             printf("Se ha eliminado el Cliente\n\n");
         }
         system("pause");
@@ -322,7 +291,7 @@ void modificarCliente(eCliente Clientes[], int tam)
             {
                 printf("Ingrese el telefono: ");
                 fflush(stdin);
-                if(getStr(nuevoTelefono,51)==0 && validarName(nuevoTelefono,51)==1)
+                if(getStr(nuevoTelefono,51)==0)
                 {
                     fflush(stdin);
                     strcpy(Clientes[indice].telefono,nuevoTelefono);
@@ -371,5 +340,4 @@ void ordenarXApellidoYNombre(eCliente listado[],int tam)
     {
         mostrarCliente(listado[i]);
     }
-    system("pause");
 }
