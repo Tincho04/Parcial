@@ -1,3 +1,4 @@
+#include "validaciones.h"
 #include "juegos.h"
 
 void inicializarJuegos(eJuegos x[], int tam)
@@ -6,8 +7,8 @@ void inicializarJuegos(eJuegos x[], int tam)
 
     for(i=0; i < tam; i++)
     {
-        x[i].isEmpty = 0;
-        x[i].idJuego= 0;
+        x[i].isEmpty = VACIO;
+        x[i].idJuego= VACIO;
     }
 }
 
@@ -20,7 +21,7 @@ int buscarLibre( eJuegos x[], int tam)
     for(i=0; i< tam; i++)
     {
 
-        if( x[i].isEmpty == 0)
+        if( x[i].isEmpty == VACIO)
         {
             indice = i;
             break;
@@ -37,7 +38,7 @@ int buscarJuego(eJuegos x[], int tam, int id)
     {
 
 
-        if( x[i].idJuego == id && x[i].isEmpty == 1)
+        if( x[i].idJuego == id && x[i].isEmpty == OCUP)
         {
             indice = i;
             break;
@@ -46,6 +47,12 @@ int buscarJuego(eJuegos x[], int tam, int id)
     return indice;
 }
 
+int  IDJ()
+{
+    static int idJuego=0;
+    idJuego++;
+    return idJuego;
+}
 
 void agregarJuego(eJuegos Juegos[], int tam)
 {
@@ -53,6 +60,8 @@ void agregarJuego(eJuegos Juegos[], int tam)
     int indice;
     int esta;
     int id;
+    char descrip[51];
+    char importe[21];
 
     system("cls");
     printf("  *** Alta Juego ***\n\n");
@@ -78,48 +87,41 @@ void agregarJuego(eJuegos Juegos[], int tam)
         }
         else
         {
-            nuevoJuego.idJuego = generarID(Juegos,esta);
+            nuevoJuego.idJuego = IDJ();
 
             printf("Ingrese Descripcion: ");
             fflush(stdin);
-            gets(nuevoJuego.descripcion);
+            if(getStr(descrip,51)==0 && validarName(descrip,51)==1)
+            {
+             fflush(stdin);
+             strcpy(nuevoJuego.descripcion,descrip);
+            }
             printf("Ingrese Importe: ");
-            scanf("%d", &nuevoJuego.importe);
+            if(getStr(importe,21)==0 && validarImporte(importe,21)==1)
+            {
+             fflush(stdin);
+             nuevoJuego.importe=atof(importe);
+             if(validarFloat(nuevoJuego.importe)==1)
+             {
+                printf("Importe almacenado exitosamente");
+             }
+             else {
+                printf("El importe ingresado no es valido");
+             }
 
-            nuevoJuego.isEmpty = 1;
+             }
+            }
+            nuevoJuego.isEmpty = OCUP;
 
             Juegos[indice] = nuevoJuego;
 
         }
     }
 
-}
-int generarID(eJuegos x[],int tam)
-{
-    int retorno = 0;
-    int i;
-    if(tam > 0)
-    {
-        for(i=0; i<tam; i++)
-        {
-            if(x[i].isEmpty == 1)
-            {
-                    if(x[i].idJuego>retorno)
-                    {
-                         retorno=x[i].idJuego;
-                    }
-
-            }
-        }
-    }
-
-    return retorno+1;
-}
-
 
 void mostrarJuego(eJuegos jgs)
 {
-    printf("%4d %10s %4d \n\n", jgs.idJuego, jgs.descripcion, jgs.importe);
+    printf("%4d %10s %4f \n\n", jgs.idJuego, jgs.descripcion, jgs.importe);
 }
 
 
@@ -131,7 +133,7 @@ void mostrarJuegos(eJuegos nomina[], int tam)
     printf(("id   Descripcion  Importe\n\n"));
     for(i=0; i< tam; i++)
     {
-        if( nomina[i].isEmpty == 1)
+        if( nomina[i].isEmpty == OCUP)
         {
             mostrarJuego(nomina[i]);
         }
@@ -167,7 +169,7 @@ void eliminarJuego(eJuegos Juegos[], int tam)
         }
         else
         {
-            Juegos[indice].isEmpty = 0;
+            Juegos[indice].isEmpty = VACIO;
             printf("Se ha eliminado el Juego\n\n");
         }
         system("pause");
@@ -182,7 +184,7 @@ void modificarJuego(eJuegos Juegos[], int tam)
     char modificar;
     char opcion;
     char nuevaDescripcion[51];
-    int nuevoImporte;
+    char nuevoImporte[21];
 
     printf("Ingrese id: ");
     scanf("%d", &id);
@@ -215,9 +217,11 @@ void modificarJuego(eJuegos Juegos[], int tam)
             {
                 printf("Ingrese la descripcion: ");
                 fflush(stdin);
-                gets(nuevaDescripcion);
-                validarStringJ(nuevaDescripcion);
-                strcpy(nuevaDescripcion,Juegos[indice].descripcion);
+                if(getStr(nuevaDescripcion,51)==0 && validarName(nuevaDescripcion,51)==1)
+                {
+                    fflush(stdin);
+                    strcpy(Juegos[indice].descripcion,nuevaDescripcion);
+                }
                 system("pause");
                 break;
             }
@@ -232,9 +236,17 @@ void modificarJuego(eJuegos Juegos[], int tam)
             else
             {
                 printf("Ingrese el importe: ");
-                scanf("%d",nuevoImporte);
-                validarImporte(nuevoImporte);
-                Juegos[indice].importe=nuevoImporte;
+                if(getStr(nuevoImporte,21)==0 && validarImporte(nuevoImporte,21)==1)
+                {
+                    fflush(stdin);
+                    Juegos[indice].importe=atof(nuevoImporte);
+                    if(Juegos[indice].importe<0)
+                    {
+                        printf("Reingrese un importe real: ");
+                        getStr(nuevoImporte,21);
+                        validarImporte(nuevoImporte,21);
+                    }
+                }
                 system("pause");
                 break;
             }

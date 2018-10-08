@@ -31,14 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Clientes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Clientes.h" />
+		<Unit filename="alquiler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="alquiler.h" />
 		<Unit filename="juegos.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="juegos.h" />
-		<Unit filename="juegosYClientes.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="juegosYClientes.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

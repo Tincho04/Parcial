@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "validaciones.h"
+#include "alquiler.h"
 #include "juegos.h"
-#include "juegosYClientes.h"
+#include "Clientes.h"
 #define J 4
 #define C 10
 #define A 40
@@ -24,7 +25,7 @@ int main()
         switch(eleccion)
         {
         case 1:
-            agregarCliente(clienteMain, C);
+            cargarLibre(clienteMain, C);
             system("pause");
             cargaC='S';
             break;
@@ -39,6 +40,7 @@ int main()
             {
                 printf("Debe ingresar primero los datos. \n ");
                 system("pause");
+                eleccion=menu();
                 break;
             }
 
@@ -53,6 +55,7 @@ int main()
             {
                 printf("Debe ingresar primero los datos. \n ");
                 system("pause");
+                eleccion=menu();
                 break;
             }
         case 4:
@@ -67,6 +70,7 @@ int main()
             {
                 printf("Debe ingresar primero los datos. \n ");
                 system("pause");
+                eleccion=menu();
                 break;
             }
         case 5:
@@ -85,6 +89,7 @@ int main()
             {
                 printf("Debe ingresar primero los datos. \n ");
                 system("pause");
+                eleccion=menu();
                 break;
             }
 
@@ -99,6 +104,7 @@ int main()
             {
                 printf("Debe ingresar primero los datos. \n ");
                 system("pause");
+                eleccion=menu();
                 break;
             }
         case 8:
@@ -113,13 +119,14 @@ int main()
             {
                 printf("Debe ingresar primero los datos. \n ");
                 system("pause");
+                eleccion=menu();
                 break;
             }
         case 9:
              if (cargaC=='S' && cargaJ=='S')
             {
                 system("cls");
-                altasAlquileres(alquileresMain, A);
+                altaAlquiler(alquileresMain, A, juegosMain, J, clienteMain, C);
                 system("pause");
                 break;
             }
@@ -127,6 +134,7 @@ int main()
             {
                 printf("Debe ingresar primero los datos. \n ");
                 system("pause");
+                eleccion=menu();
                 break;
             }
         case 10:
