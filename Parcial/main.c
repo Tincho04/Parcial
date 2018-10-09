@@ -16,6 +16,7 @@ int main()
     char seguir = 'S';
     char cargaC = 'N';
     char cargaJ = 'N';
+    char cargaA = 'N';
     int eleccion;
     inicializarClientes(clienteMain, C);
     inicializarJuegos(juegosMain,J);
@@ -144,6 +145,7 @@ int main()
             {
                 system("cls");
                 altaAlquiler(alquileresMain, A, juegosMain, J, clienteMain, C);
+                cargaA=='S';
                 system("pause");
                 eleccion=menu();
                 break;
@@ -156,6 +158,22 @@ int main()
                 break;
             }
         case 10:
+            if (cargaA=='S')
+            {
+                system("cls");
+                subMenuInformes(clienteMain, C, juegosMain, J, alquileresMain, A);
+                system("pause");
+                eleccion=menu();
+                break;
+            }
+            else
+            {
+                printf("Debe ingresar primero los datos. \n ");
+                system("pause");
+                eleccion=menu();
+                break;
+            }
+        case 11:
             seguir = 'N';
             break;
         }

@@ -60,12 +60,104 @@ int menu()
     printf("7- Baja de Juegos\n");
     printf("8- Listar Juegos\n");
     printf("9- Alta de Alquileres\n");
-    printf("10- Salir\n");
+    printf("10- Informes\n");
+    printf("11- Salir\n");
     printf("\nIngrese opcion: ");
     fflush(stdin);
     scanf("%d", &opcion);
 
     return opcion;
+}
+
+void subMenuInformes(eCliente clientes[], int tamC, eJuegos juegos[], int tamJ, eAlquiler alquileres[], int tamA)
+{
+    char opcion;
+    do
+    {
+        system("cls");
+        printf("\n         ################################################################");
+        printf("\n         *                                                              *");
+        printf("\n         *                                                              *");
+        printf("\n         *                      >> Informes <<                          *");
+        printf("\n         *                                                              *");
+        printf("\n         *                                                              *");
+        printf("\n         ################################################################");
+        printf("\n         |                                                              |");
+        printf("\n             0 - Promedio y Total de importes alquilados");
+        printf("\n         |                                                              |" );
+        printf("\n             1 - Cantidad de juegos cuyo importe no supera al promedio"  );
+        printf("\n         |                                                              |" );
+        printf("\n             2 - Listar clientes en base a juego alquilado");
+        printf("\n         |                                                              |" );
+        printf("\n             3 - listar juegos alquilados por cliente determinado"  );
+        printf("\n         |                                                              |" );
+        printf("\n             4 - Juegos menos alquilados");
+        printf("\n         |                                                              |" );
+        printf("\n             5 - Cliente con mas alquileres realizados"  );
+        printf("\n         |                                                              |" );
+        printf("\n             6 - Juegos alquilados en fecha determinada");
+        printf("\n         |                                                              |" );
+        printf("\n             7 - Clientes que realizaron al menos un alquiler en fecha x "  );
+        printf("\n         |                                                              |" );
+        printf("\n             8 - Juegos ordenados por importe (Descendente)");
+        printf("\n         |                                                             |" );
+        printf("\n             9 - Clientes ordenados por Apellido (Ascendente)"  );
+        printf("\n         |                                                             |" );
+        printf("\n             R - Regresar");
+        printf("\n         |                                                              |" );
+        printf("\n         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" );
+        printf("\n");
+        printf("\n          Ingrese una opcion: ");
+        opcion=getch();
+        switch(opcion)
+        {
+        case '0':
+            system("cls");
+            calcularPromedio(clientes, tamC, juegos, tamJ);
+            break;
+        case '1':
+            system("cls");
+            compararImportes(juegos, tamJ, alquileres, tamA );
+            break;
+        case '2':
+            system("cls");
+            listarClientesAlquiler(clientes, tamC,alquileres,tamA, juegos,tamJ);
+            break;
+        case '3':
+            system("cls");
+            listarJuegosxCliente(clientes, tamC,alquileres, tamA, juegos, tamJ);
+            break;
+        case '4':
+            system("cls");
+            printf("Este informe no ha sido programado");
+            break;
+        case '5':
+            system("cls");
+            printf("Este informe no ha sido programado");
+            break;
+        case '6':
+            system("cls");
+            listarJPorFechaX(juegos,tamJ,alquileres,tamA);
+            break;
+        case '7':
+            system("cls");
+            listarCPorFechaX (clientes,tamC,alquileres,tamA);
+            break;
+        case '8':
+            system("cls");
+            ordenarXImporte(juegos,tamJ);
+            break;
+        case '9':
+            system("cls");
+            apellidoInsercion (clientes, tamC);
+            break;
+        case 'R':
+            break;
+        default:
+            printf("No es una opcion valida");
+        }
+    }
+    while(opcion!='R');
 }
 
 int  IDC()
@@ -186,7 +278,6 @@ void eliminarCliente(eCliente Clientes[], int tam)
         }
         system("pause");
     }
-
 }
 
 void modificarCliente(eCliente Clientes[], int tam)

@@ -5,6 +5,9 @@
 #include <string.h>
 #include <conio.h>
 #include <ctype.h>
+#include "validaciones.h"
+#include "alquiler.h"
+#include "juegos.h"
 #define VACIO 1
 #define OCUP   0
 
@@ -105,4 +108,16 @@ void ordenarXApellidoYNombre(eCliente x[],int tam);
  */
 int menu();
 
+/** \brief Submenu que muestra el listado de informes
+ *
+ * \param clientes[] eCliente
+ * \param tamC int
+ * \param juegos[] eJuegos
+ * \param tamJ int
+ * \param alquileres[] eAlquiler
+ * \param tamA int
+ * \return void
+ *
+ */
+void subMenuInformes(eCliente clientes[], int tamC, eJuegos juegos[], int tamJ, eAlquiler alquileres[], int tamA);
 #endif // JUEGOSYCLIENTES_H_INCLUDED

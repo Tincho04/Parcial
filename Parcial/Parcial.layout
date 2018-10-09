@@ -2,34 +2,34 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="Clientes.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1752" topLine="36" />
-		</Cursor>
-	</File>
-	<File name="Clientes.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="182" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="alquiler.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="273" topLine="147" />
-		</Cursor>
-	</File>
-	<File name="juegos.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1059" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="juegos.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="737" topLine="12" />
+			<Cursor1 position="1587" topLine="62" />
 		</Cursor>
 	</File>
 	<File name="alquiler.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="245" topLine="0" />
+			<Cursor1 position="1975" topLine="85" />
+		</Cursor>
+	</File>
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="378" topLine="154" />
+		</Cursor>
+	</File>
+	<File name="juegos.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2520" topLine="117" />
+		</Cursor>
+	</File>
+	<File name="validaciones.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="127" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="Clientes.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1460" topLine="53" />
 		</Cursor>
 	</File>
 	<File name="validaciones.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -37,14 +37,14 @@
 			<Cursor1 position="810" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="alquiler.c" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="498" topLine="6" />
+			<Cursor1 position="8951" topLine="348" />
 		</Cursor>
 	</File>
-	<File name="validaciones.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Clientes.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="127" topLine="15" />
+			<Cursor1 position="5433" topLine="315" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
