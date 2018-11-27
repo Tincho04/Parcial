@@ -1,0 +1,63 @@
+# depslib dependency file v1.0
+1543272642 source:d:\silva_martin_1f_sp\parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"controller.h"
+	"Validaciones.h"
+
+1543280007 d:\silva_martin_1f_sp\parcial2\linkedlist.h
+	"Employee.h"
+
+1543280115 d:\silva_martin_1f_sp\parcial2\employee.h
+
+1543269386 d:\silva_martin_1f_sp\parcial2\parser.h
+
+1543269386 d:\silva_martin_1f_sp\parcial2\controller.h
+
+1543269386 d:\silva_martin_1f_sp\parcial2\validaciones.h
+
+1543280089 source:d:\silva_martin_1f_sp\parcial2\employee.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"string.h"
+	"Validaciones.h"
+
+1543280007 source:d:\silva_martin_1f_sp\parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"parser.h"
+
+1543280048 source:d:\silva_martin_1f_sp\parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"string.h"
+	"Validaciones.h"
+	"parser.h"
+
+1543277766 source:d:\silva_martin_1f_sp\parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"LinkedList.h"
+	"Employee.h"
+
+1543272328 source:d:\silva_martin_1f_sp\parcial2\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"Validaciones.h"
+
