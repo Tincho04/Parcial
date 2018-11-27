@@ -24,38 +24,51 @@ int main()
             fflush(stdin);
             if(getString(archivo,21) == 0)
             {
-            controller_loadFromText(archivo,listaEmpleados);
-            flag = 1;
+                controller_loadFromText(archivo,listaEmpleados);
+                flag = 1;
             }
             break;
         case 2:
-               system("cls");
             if(flag!=0)
+            {
+                if(!(controller_ll_map(listaEmpleados)))
                 {
-               // FuncionMap (LinkedList, (ll_salary)(listaEmpleados));
-               ll_salary (listaEmpleados);
+                    printf("\nProblemas para calcular el sueldo\n\n");
+                    system("pause");
                 }
-                else {
-                    printf("Cargue datos primero para poder guardarlos");
+                else
+                {
+                    printf("\nSueldo calculado exitosamente...\n\n");
+                    system("pause");
                 }
+            }
+            else
+            {
+                printf("Cargue datos primero para poder guardarlos");
+            }
+            break;
         case 3:
             system("cls");
             if(flag!=0)
-                {
-                    controller_saveAsText("info.csv",listaEmpleados);
-                }else {
-                    printf("Cargue datos primero para poder guardarlos");
-                }
-                break;
+            {
+                controller_saveAsText("info.csv",listaEmpleados);
+            }
+            else
+            {
+                printf("Cargue datos primero para poder guardarlos");
+            }
+            break;
         case 4:
             system("cls");
             if(flag!=0)
-                {
-                    controller_saveAsBinary("info.dat",listaEmpleados);
-                }else {
-                    printf("Cargue datos primero para poder guardarlos");
-                }
-                break;
+            {
+                controller_saveAsBinary("info.dat",listaEmpleados);
+            }
+            else
+            {
+                printf("Cargue datos primero para poder guardarlos");
+            }
+            break;
         case 5:
             break;
         default:
@@ -63,7 +76,7 @@ int main()
             system("pause");
         }
     }
-while(option != 5);
+    while(option != 5);
 
-return 0;
+    return 0;
 }

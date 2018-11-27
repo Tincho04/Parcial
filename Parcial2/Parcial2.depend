@@ -61,3 +61,65 @@
 	"string.h"
 	"Validaciones.h"
 
+1543317383 source:c:\users\martin\desktop\parcial\parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"controller.h"
+	"Validaciones.h"
+
+1543317014 c:\users\martin\desktop\parcial\parcial2\linkedlist.h
+	"Employee.h"
+
+1543317014 c:\users\martin\desktop\parcial\parcial2\employee.h
+
+1543315813 c:\users\martin\desktop\parcial\parcial2\parser.h
+
+1543317014 c:\users\martin\desktop\parcial\parcial2\controller.h
+
+1543315813 c:\users\martin\desktop\parcial\parcial2\validaciones.h
+
+1543317085 source:c:\users\martin\desktop\parcial\parcial2\employee.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"string.h"
+	"Validaciones.h"
+
+1543317014 source:c:\users\martin\desktop\parcial\parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"parser.h"
+
+1543317350 source:c:\users\martin\desktop\parcial\parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"string.h"
+	"Validaciones.h"
+	"parser.h"
+
+1543316364 source:c:\users\martin\desktop\parcial\parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"LinkedList.h"
+	"Employee.h"
+
+1543315813 source:c:\users\martin\desktop\parcial\parcial2\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"Validaciones.h"
+

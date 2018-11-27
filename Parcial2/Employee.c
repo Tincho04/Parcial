@@ -35,19 +35,23 @@ Employee* employee_new()
 *\return Employee*
 */
 
-Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr)
+Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr, char* sueldoStr)
 {
   Employee* this;
     this = employee_new();
 
     int idClienteInt = atoi(idStr);
     int horasTrabajadasInt = atoi(horasTrabajadasStr);
+    int sueldoInt = atoi(sueldoStr);
 
     if(
     !employee_setId(this,idClienteInt)&&
     !employee_setName(this,nombreStr)&&
-    !employee_setHours(this,horasTrabajadasInt))
-        return this;
+    !employee_setHours(this,horasTrabajadasInt)&&
+    !employee_setSalary(this,sueldoInt))
+     {
+         return this;
+     }
     return NULL;
 }
 
@@ -234,26 +238,31 @@ int employee_getAll(Employee* this,char* nombre,int* horas,int* sueldo,int* id)
  * \param pList LinkedList* Puntero a la lista
  * \return int Retorna (-1) Error: si el puntero a la lista es NULL o alguno de los nodos es NULL. (0) Si ok
  */
-int ll_salary(Employee* this)
+int ll_salary(void* employeeA)
 {
     int returnAux = -1;
-    int sueldo;
-    if(this->horasTrabajadas<=176)
-    {
-        sueldo=this->horasTrabajadas*180;
-        employee_setSalary(this,sueldo);
-        returnAux = 0;
-    }else if(this->horasTrabajadas>=177 && this->horasTrabajadas<=208){
-        sueldo=this->horasTrabajadas*270;
-        employee_setSalary(this,sueldo);
-        returnAux = 0;
-    }else if(this->horasTrabajadas>=209 && this->horasTrabajadas<=240){
-        sueldo=this->horasTrabajadas*360;
-        returnAux = 0;
-        employee_setSalary(this,sueldo);
+    int horAux1=0;
+    int sueldo=1;
+    if(employeeA!=NULL){
+        employee_getHours(((Employee*)employeeA),&horAux1);
+        if(horAux1<=176){
+            sueldo=180*horAux1;
+            employee_setSalary(((Employee*)employeeA),sueldo);
+            returnAux = 1;
+        }
+        else if(horAux1>=176&&horAux1<=208){
+            sueldo=270*horAux1;
+            employee_setSalary(((Employee*)employeeA),sueldo);
+            returnAux = 1;
+        }
+        else if(horAux1>=209&&horAux1<=240) {
+            sueldo=360*horAux1;
+            employee_setSalary(((Employee*)employeeA),sueldo);
+            returnAux = 1;
+        }
     }
-
     return returnAux;
 }
+
 
 

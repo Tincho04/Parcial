@@ -509,72 +509,25 @@ LinkedList* ll_clone(LinkedList* this)
 }
 
 
-/** \brief Ordena los elementos de la lista utilizando la funcion criterio recibida como parametro
- * \param pList LinkedList* Puntero a la lista
- * \param pFunc (*pFunc) Puntero a la funcion criterio
- * \param order int  [1] Indica orden ascendente - [0] Indica orden descendente
- * \return int Retorna  (-1) Error: si el puntero a la listas es NULL
-                                ( 0) Si ok
+/** \brief Mapea en base a la funcion enviada
+ *
+ * \param void*
+ * \return int ll_map(LinkedList* this, int
+ *
  */
-int ll_map(LinkedList* this, int (*pFunc)(void*))
-{
-    int returnAux = -1;
-    int i;
-    int flagSwap;
-    Node* auxNode;
+int ll_map(LinkedList* this, int (*pFunc)(void*)){
+    int returnAux =-1;
 
-    if(this != NULL && ll_len(this)> 0 && pFunc != NULL)
+    if(this != NULL && pFunc != NULL)
     {
-        do
+        if(this!=NULL)
         {
-            i = 0;
-            auxNode = getNode(this,i);
-            flagSwap = 0;
-            for(i=0;i<ll_len(this)-1;i++)
+            returnAux=0;
+            for(int i=0; i< ll_len(this); i++)
             {
-                if(i!= 0)
-                {
-                    auxNode = auxNode->pNextNode;
-                }
-                if(auxNode->pElement != NULL)
-                {
-                   flagSwap = 1;
-                   ll_salary(this);
-                }
+                pFunc( ll_get(this,i));
             }
         }
-        while(flagSwap == 1);
-        returnAux = 0;
     }
     return returnAux;
 }
-
-/** \brief Algoritmo que toma el salario en base a horas trabajadas.
- * \param pList LinkedList* Puntero a la lista
- * \return int Retorna (-1) Error: si el puntero a la lista es NULL o alguno de los nodos es NULL. (0) Si ok
- */
-/*
-int ll_salary(LinkedList* this)
-{
-    int returnAux = -1;
-    int sueldo;
-    if(this->horasTrabajadas<=176)
-    {
-        sueldo=horasTrabajadas*180;
-        employee_setSalary(this,sueldo);
-        returnAux = 0;
-    }else if(this->horasTrabajadas>=177 && this->horasTrabajadas<=208){
-        sueldo=horasTrabajadas*270;
-        employee_setSalary(this,sueldo);
-        returnAux = 0;
-    }else if(this->horasTrabajadas>=209 && this->horasTrabajadas<=240){
-        sueldo=horasTrabajadas*360;
-        returnAux = 0;
-        employee_setSalary(this,sueldo);
-    }
-
-    }
-    return returnAux;
-}
-
-*/

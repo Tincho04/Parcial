@@ -77,3 +77,26 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
     return retorno;
 }
 
+/** \brief Valida que se ejecute correctamente la funcion ll_map
+ *
+ * \param pArrayListEmployee LinkedList*
+ * \return int
+ *
+ */
+int controller_ll_map(LinkedList* pArrayListEmployee)
+{
+    int retorno=0;
+    if(pArrayListEmployee == NULL){
+        printf("No hay datos en la lista.\n");
+    }
+    else
+    {
+        LinkedList* newLinker=ll_clone(pArrayListEmployee);
+        if(newLinker!=NULL){
+            ll_map(newLinker,ll_salary);
+                retorno=1;
+            ll_deleteLinkedList(newLinker);
+        }
+    }
+    return retorno;
+}
